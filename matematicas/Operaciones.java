@@ -144,4 +144,42 @@ public class Operaciones {
     public static boolean esIgual(int a, int b) {
         return (esIgual((long) a, (long) b));
     }
+    
+    /**
+     * multiplica
+     * Devuelve la multiplicación de dos números usando sumas
+     * 
+     * @param a Multiplicando
+     * @param b Multiplicador
+     * @return El resultado de sumar b veces a
+     */
+
+     public static long multiplica(long a, long b) {
+        boolean neg = false;
+        if (esIgual(a, 0) || esIgual(b, 0))
+            return 0;
+        if (esMenor(a, 0) && esMenor(b, 0)) {
+            a = -a;
+            b = -b;
+        } else if (esMenor(a, 0)) {
+            neg = true;
+            a = -a;
+        } else if (esMenor(b, 0)) {
+            neg = true;
+            b = -b;
+        }
+        long multiplicacion = a;
+        while (esMayor(b, 1)) {
+            multiplicacion = suma(multiplicacion, a);
+            b = dec(b);
+        }
+        if (neg)
+            return -multiplicacion;
+        else
+            return multiplicacion;
+    }
+
+    public static long multiplica(int a, int b) {
+        return multiplica((long) a, (long) b);
+    }
 }
