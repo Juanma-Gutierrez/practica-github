@@ -238,4 +238,27 @@ public class Operaciones {
         return ((int) cuadrado((long) a));
     }
 
+	
+    /**
+     * cubo
+     * Devuelve la potencia de un número elevado a 3
+     * 
+     * @param a número a calcular su cubo
+     * @return Devuelve la potencia de un número elevado a 3
+     */
+    public static long cubo(long a) {
+        return (potencia(a, 3));
+    }
+
+    /**
+     * cubo
+     * Devuelve la potencia de un número elevado a 3
+     * 
+     * @param a número a calcular su cubo
+     * @return Devuelve la potencia de un número elevado a 3
+     */
+    public static int cubo(int a) {
+        return ((int) cubo((long) a));
+    }
+
 }
