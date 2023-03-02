@@ -307,4 +307,22 @@ public class Operaciones {
         return ((int) cubo((long) a));
     }
 
+    /**
+     * esMultiplo
+     * Indica si un número es múltiplo de otro dado
+     * 
+     * @param a valor a comprobar si es múltiplo
+     * @param b valor con el que comprobar si a es múltiplo de él
+     * @return true si a es múltiplo y false en caso contrario
+     */
+
+     public static boolean esMultiplo(long a, long b) {
+        if (b > 0)
+            return (esIgual(resto(a, b), 0));
+        return false;
+    }
+
+    public static boolean esMultiplo(int a, int b) {
+        return esMultiplo((long) a, (long) b);
+    }
 }
