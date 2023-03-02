@@ -215,4 +215,27 @@ public class Operaciones {
         return ((int) divide((long) a, (long) b));
     }
 
+	
+    /**
+     * cuadrado
+     * Devuelve la potencia de un número elevado a 2
+     * 
+     * @param a número a calcular su cuadrado
+     * @return Devuelve la potencia de un número elevado a 2
+     */
+    public static long cuadrado(long a) {
+        return (potencia(a, 2));
+    }
+
+    /**
+     * cuadrado
+     * Devuelve la potencia de un número elevado a 2
+     * 
+     * @param a número a calcular su cuadrado
+     * @return Devuelve la potencia de un número elevado a 2
+     */
+    public static int cuadrado(int a) {
+        return ((int) cuadrado((long) a));
+    }
+
 }
