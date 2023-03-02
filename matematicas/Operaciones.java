@@ -261,4 +261,50 @@ public class Operaciones {
         return potencia((long) base, exponente);
     }
 
+	
+    /**
+     * cuadrado
+     * Devuelve la potencia de un número elevado a 2
+     * 
+     * @param a número a calcular su cuadrado
+     * @return Devuelve la potencia de un número elevado a 2
+     */
+    public static long cuadrado(long a) {
+        return (potencia(a, 2));
+    }
+
+    /**
+     * cuadrado
+     * Devuelve la potencia de un número elevado a 2
+     * 
+     * @param a número a calcular su cuadrado
+     * @return Devuelve la potencia de un número elevado a 2
+     */
+    public static int cuadrado(int a) {
+        return ((int) cuadrado((long) a));
+    }
+
+	
+    /**
+     * cubo
+     * Devuelve la potencia de un número elevado a 3
+     * 
+     * @param a número a calcular su cubo
+     * @return Devuelve la potencia de un número elevado a 3
+     */
+    public static long cubo(long a) {
+        return (potencia(a, 3));
+    }
+
+    /**
+     * cubo
+     * Devuelve la potencia de un número elevado a 3
+     * 
+     * @param a número a calcular su cubo
+     * @return Devuelve la potencia de un número elevado a 3
+     */
+    public static int cubo(int a) {
+        return ((int) cubo((long) a));
+    }
+
 }
