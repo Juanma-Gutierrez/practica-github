@@ -325,4 +325,21 @@ public class Operaciones {
     public static boolean esMultiplo(int a, int b) {
         return esMultiplo((long) a, (long) b);
     }
+    
+    /**
+     * esDivisor
+     * Indica si un número es divisor de otro dado
+     * 
+     * @param a valor a comprobar si es divisor
+     * @param b valor con el que comprobar si a es divisor de él
+     * @return true si a es divisor y false en caso contrario
+     */
+
+     public static boolean esDivisor(long a, long b) {
+        return (esMultiplo(b, a));
+    }
+
+    public static boolean esDivisor(int a, int b) {
+        return esDivisor((long) a, (long) b);
+    }
 }
