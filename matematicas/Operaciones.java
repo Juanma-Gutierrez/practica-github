@@ -215,4 +215,24 @@ public class Operaciones {
         return ((int) divide((long) a, (long) b));
     }
 
+    /**
+     * resto
+     * Devuelve el resto de la división entera
+     * 
+     * @param a Dividendo
+     * @param b Divisor
+     * @return Devuelve el resto de la división entera de a entre b
+     */
+
+     public static long resto(long a, long b) {
+        if (b != 0) {
+            return (a - (multiplica(b, divide(a, b))));
+        }
+        return 0;
+    }
+
+    public static long resto(int a, int b) {
+        return resto((long) a, (long) b);
+    }
+
 }
