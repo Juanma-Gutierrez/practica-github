@@ -95,4 +95,53 @@ public class Operaciones {
         return ((int) dec((long) a));
     }
 
+    /**
+     * esMayor
+     * Comprueba si un número es mayor que otro
+     * 
+     * @param a Valor a comparar si es mayor
+     * @param b Valor a comparar si es menor
+     * @return true si a es mayor que b y
+     *         false si es igual o menor
+     */
+    public static boolean esMayor(long a, long b) {
+        return (!(0 > resta(a, b)) && (0 > resta(b, a)));
+    }
+
+    public static boolean esMayor(int a, int b) {
+        return esMayor((long) a, (long) b);
+    }
+
+    /**
+     * esMenor
+     * Comprueba si un número es menor que otro
+     * 
+     * @param a Valor a comparar si es menor
+     * @param b Valor a comparar si es mayor
+     * @return true si a es menor que b y
+     *         false si es igual o mayor
+     */
+    public static boolean esMenor(long a, long b) {
+        return (esMayor(b, a));
+    }
+
+    public static boolean esMenor(int a, int b) {
+        return esMenor((long) a, (long) b);
+    }
+
+    /**
+     * esIgual
+     * Comprueba si un número es igual que otro
+     * 
+     * @param a Primer valor a comparar
+     * @param b Segundo valor a comparar
+     * @return true si son iguales y false si son distintos
+     */
+    public static boolean esIgual(long a, long b) {
+        return (!(esMayor(a, b) || esMenor(a, b)));
+    }
+
+    public static boolean esIgual(int a, int b) {
+        return (esIgual((long) a, (long) b));
+    }
 }
