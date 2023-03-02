@@ -182,4 +182,37 @@ public class Operaciones {
     public static long multiplica(int a, int b) {
         return multiplica((long) a, (long) b);
     }
+
+	
+    /**
+     * divide
+     * Devuelve el cociente de la división entera de dos números usando restas
+     * 
+     * @param a Dividendo
+     * @param b Divisor
+     * @return Devuelve el cociente de la división entera de a entre b
+     *         realizando restas
+     */
+    public static long divide(long a, long b) {
+        long res = 0;
+        while (esMayor(a, b) || esIgual(a, b)) {
+            res = inc(res);
+            a = resta(a, b);
+        }
+        return (res);
+    }
+
+    /**
+     * divide
+     * Devuelve el cociente de la división entera de dos números usando restas
+     * 
+     * @param a Dividendo
+     * @param b Divisor
+     * @return Devuelve el cociente de la división entera de a entre b
+     *         realizando restas
+     */
+    public static int divide(int a, int b) {
+        return ((int) divide((long) a, (long) b));
+    }
+
 }
