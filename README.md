@@ -10,3 +10,9 @@ El programa consiste en una serie de funciones que realizan cálculos:
 - esIgual
 - Multiplica
 - Divide
+
+
+## Recursos utilizados:
+- Ficheros de examen de Programación
+- Examen13122022.java
+- Operaciones.java
