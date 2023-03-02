@@ -341,4 +341,40 @@ public class Operaciones {
         return (esPrimo((long) a));
     }
 
+	
+    /**
+     * esCuadradoPerfecto
+     * Indica si un número es cuadrado perfecto
+     * Un número es cuadrado perfecto si es el resultado del cuadrado de otro número
+     * 
+     * @param a número a comprobar si cuadrado perfecto
+     * @return true si a es cuadrado perfecto y false en caso contrario
+     */
+    public static boolean esCuadradoPerfecto(long a) {
+        if (esMenor(a, 0))
+            return false;
+        boolean cuadradoPerfecto = false;
+        long cont = a;
+        cont = dec(cont);
+        while (esMayor(cont, 0) && !cuadradoPerfecto) {
+            if (esIgual(cuadrado(cont), a)) {
+                cuadradoPerfecto = true;
+            }
+            cont = dec(cont);
+        }
+        return (cuadradoPerfecto);
+    }
+
+    /**
+     * esCuadradoPerfecto
+     * Indica si un número es cuadrado perfecto
+     * Un número es cuadrado perfecto si es el resultado del cuadrado de otro número
+     * 
+     * @param a número a comprobar si cuadrado perfecto
+     * @return true si a es cuadrado perfecto y false en caso contrario
+     */
+    public static boolean esCuadradoPerfecto(int a) {
+        return (esCuadradoPerfecto((long) a));
+    }
+
 }
