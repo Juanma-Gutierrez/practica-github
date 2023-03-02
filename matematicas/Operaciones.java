@@ -234,5 +234,182 @@ public class Operaciones {
     public static long resto(int a, int b) {
         return resto((long) a, (long) b);
     }
+    
+    /**
+     * potencia
+     * Devuelve la potencia de un número elevado a otro
+     * 
+     * @param base      base
+     * @param exponente exponente
+     * @return Devuelve la potencia de un número elevado a otro usando
+     *         multiplicaciones
+     */
+    public static long potencia(long base, int exponente) {
+        long potencia = 1;
+        if (esIgual(exponente, 0))
+            return 1;
+        if (esMenor(exponente, 0))
+            return 0;
+        while (esMayor(exponente, 0)) {
+            potencia = multiplica(potencia, base);
+            exponente = dec(exponente);
+        }
+        return potencia;
+    }
+
+    public static long potencia(int base, int exponente) {
+        return potencia((long) base, exponente);
+    }
+
+	
+    /**
+     * cuadrado
+     * Devuelve la potencia de un número elevado a 2
+     * 
+     * @param a número a calcular su cuadrado
+     * @return Devuelve la potencia de un número elevado a 2
+     */
+    public static long cuadrado(long a) {
+        return (potencia(a, 2));
+    }
+
+    /**
+     * cuadrado
+     * Devuelve la potencia de un número elevado a 2
+     * 
+     * @param a número a calcular su cuadrado
+     * @return Devuelve la potencia de un número elevado a 2
+     */
+    public static int cuadrado(int a) {
+        return ((int) cuadrado((long) a));
+    }
+
+	
+    /**
+     * cubo
+     * Devuelve la potencia de un número elevado a 3
+     * 
+     * @param a número a calcular su cubo
+     * @return Devuelve la potencia de un número elevado a 3
+     */
+    public static long cubo(long a) {
+        return (potencia(a, 3));
+    }
+
+    /**
+     * cubo
+     * Devuelve la potencia de un número elevado a 3
+     * 
+     * @param a número a calcular su cubo
+     * @return Devuelve la potencia de un número elevado a 3
+     */
+    public static int cubo(int a) {
+        return ((int) cubo((long) a));
+    }
+
+    /**
+     * esMultiplo
+     * Indica si un número es múltiplo de otro dado
+     * 
+     * @param a valor a comprobar si es múltiplo
+     * @param b valor con el que comprobar si a es múltiplo de él
+     * @return true si a es múltiplo y false en caso contrario
+     */
+
+     public static boolean esMultiplo(long a, long b) {
+        if (b > 0)
+            return (esIgual(resto(a, b), 0));
+        return false;
+    }
+
+    public static boolean esMultiplo(int a, int b) {
+        return esMultiplo((long) a, (long) b);
+    }
+    
+    /**
+     * esDivisor
+     * Indica si un número es divisor de otro dado
+     * 
+     * @param a valor a comprobar si es divisor
+     * @param b valor con el que comprobar si a es divisor de él
+     * @return true si a es divisor y false en caso contrario
+     */
+
+     public static boolean esDivisor(long a, long b) {
+        return (esMultiplo(b, a));
+    }
+
+    public static boolean esDivisor(int a, int b) {
+        return esDivisor((long) a, (long) b);
+    }
+	
+    /**
+     * esPrimo
+     * Indica si un número es primo
+     * 
+     * @param a número a comprobar si es primo
+     * @return true si a es primo y false en caso contrario
+     */
+    public static boolean esPrimo(long a) {
+        if (esMenor(a, 2))
+            return false;
+        boolean primo = true;
+        long cont = a;
+        cont = dec(cont);
+        while (esMayor(cont, 1) && primo) {
+            if (esIgual(resto(a, cont), 0)) {
+                primo = false;
+            }
+            cont = dec(cont);
+        }
+        return (primo);
+    }
+
+    /**
+     * esPrimo
+     * Indica si un número es primo
+     * 
+     * @param a número a comprobar si es primo
+     * @return true si a es primo y false en caso contrario
+     */
+    public static boolean esPrimo(int a) {
+        return (esPrimo((long) a));
+    }
+
+	
+    /**
+     * esCuadradoPerfecto
+     * Indica si un número es cuadrado perfecto
+     * Un número es cuadrado perfecto si es el resultado del cuadrado de otro número
+     * 
+     * @param a número a comprobar si cuadrado perfecto
+     * @return true si a es cuadrado perfecto y false en caso contrario
+     */
+    public static boolean esCuadradoPerfecto(long a) {
+        if (esMenor(a, 0))
+            return false;
+        boolean cuadradoPerfecto = false;
+        long cont = a;
+        cont = dec(cont);
+        while (esMayor(cont, 0) && !cuadradoPerfecto) {
+            if (esIgual(cuadrado(cont), a)) {
+                cuadradoPerfecto = true;
+            }
+            cont = dec(cont);
+        }
+        return (cuadradoPerfecto);
+    }
+
+    /**
+     * esCuadradoPerfecto
+     * Indica si un número es cuadrado perfecto
+     * Un número es cuadrado perfecto si es el resultado del cuadrado de otro número
+     * 
+     * @param a número a comprobar si cuadrado perfecto
+     * @return true si a es cuadrado perfecto y false en caso contrario
+     */
+    public static boolean esCuadradoPerfecto(int a) {
+        return (esCuadradoPerfecto((long) a));
+    }
 
 }
