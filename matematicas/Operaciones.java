@@ -234,5 +234,31 @@ public class Operaciones {
     public static long resto(int a, int b) {
         return resto((long) a, (long) b);
     }
+    
+    /**
+     * potencia
+     * Devuelve la potencia de un número elevado a otro
+     * 
+     * @param base      base
+     * @param exponente exponente
+     * @return Devuelve la potencia de un número elevado a otro usando
+     *         multiplicaciones
+     */
+    public static long potencia(long base, int exponente) {
+        long potencia = 1;
+        if (esIgual(exponente, 0))
+            return 1;
+        if (esMenor(exponente, 0))
+            return 0;
+        while (esMayor(exponente, 0)) {
+            potencia = multiplica(potencia, base);
+            exponente = dec(exponente);
+        }
+        return potencia;
+    }
+
+    public static long potencia(int base, int exponente) {
+        return potencia((long) base, exponente);
+    }
 
 }
