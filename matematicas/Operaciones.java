@@ -307,4 +307,38 @@ public class Operaciones {
         return ((int) cubo((long) a));
     }
 
+	
+    /**
+     * esPrimo
+     * Indica si un número es primo
+     * 
+     * @param a número a comprobar si es primo
+     * @return true si a es primo y false en caso contrario
+     */
+    public static boolean esPrimo(long a) {
+        if (esMenor(a, 2))
+            return false;
+        boolean primo = true;
+        long cont = a;
+        cont = dec(cont);
+        while (esMayor(cont, 1) && primo) {
+            if (esIgual(resto(a, cont), 0)) {
+                primo = false;
+            }
+            cont = dec(cont);
+        }
+        return (primo);
+    }
+
+    /**
+     * esPrimo
+     * Indica si un número es primo
+     * 
+     * @param a número a comprobar si es primo
+     * @return true si a es primo y false en caso contrario
+     */
+    public static boolean esPrimo(int a) {
+        return (esPrimo((long) a));
+    }
+
 }
